@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Chicago Art</title>
+        <meta charset="utf-8">
+        <meta name="description" content="This is a website to implement the wireframes for a Chicago Art Magazine">
+        <meta name="author" content="Team xx">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="refresh" content="600">
+        <meta name="keywords" content="Art Magazine">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <!-- Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="stylesheet/style.css" >
+        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Include Handlebars from a CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <!--Main nav-->
+            <div class="main-header">
+                <nav class="main-nav" id="myNav">            
+                    <ul>
+                        <!--Logo-->
+                        <li><object data="images/Logo.png" width="70"></object></li>
+                        <li class="main-nav-item"><a class="active-page" href="index.html">Home</a></li>
+                        <li class="main-nav-item"><a href="art-events.html">Art Events</a></li>
+                        <li class="main-nav-item"><a href="featured-artists.html">Featured Artists</a></li>
+                        <li class="main-nav-item"><a href="workshops.html">Workshops</a></li>
+                        <li class="main-nav-item"><a href="Subscription.html">Subscription</a></li>
+                    </ul> 
+                    <!--Set hamburger icon on mobile view as a dropdown menu icon-->
+                    <div class="dropdown">
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                    <!--Subscribe button is spanned at the top right corner of the website-->
+                    <span class="main-nav-item">
+                        <button class="nav-button" href="subscription.html" type="submit">Subscribe</button>
+                    </span>
+                </nav>
+            </div>
+        </header>
+
+    <!--Dropdown menu showing up when hamburger icon is clicked on mobile view only-->  
+        <div id="dropdown-menu" class="dropdown-content hidden">
+            <ul class="dropdown-bullet-list">
+
+                <li><a class="active-page" href="index.html">Home</a></li>
+                <li><a href="art-events.html">Art Events</a></li>
+                <li><a href="featured-artists.html">Featured Artists</a></li>
+                <li><a href="workshops.html">Workshops</a></li>
+                <li><a href="subscription.html">Subscription</a></li>
+            </ul>
+        </div>
+        
+    <!--Hero Image and Title for homepage-->
+        <div class="hero-homepage">
+            <img src="images/hero-workshop.png" atl="workshop" width="400"/>
+            <div class="hero-content">
+                <script id="template" type="template/handlebars">
+                    <h1>{{caps "Challenge your limit"}}</h1>
+                </script>  
+                <span id="target"></span>
+                
+                <p class="hero-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <button class="hero-button">Explore</button>
+            </div> 
+        </div>
+    <br>
+   
+    <!--Workshop banner 1-->
+    <div class="artist-card">
+        <div class = "artwork-content">
+            <h2 class="artist-title">Urban Sketching: Demystifying Realism with Watercolour</h2>
+            <h4 class="artist-name">JEAN FRANCOISE ARNAUD</h4>
+            <h6 class="title">Watercolorist</h6>
+            <p>Paint alongside with professional watercolorist Jean Francois Arnaud in this live and interactive art workshop as he demonstrates 
+                how to achieve realism while exploring contrast and values using his three wash technique.</p>
+            <div>
+                <button class="artist-button">Add to cart</button>
+            </div>
+        </div>
+        <!-- image is animated in CSS to slide in from the right -->
+        <img class="subs-image" src="images/worksop-card.jpg" width=400>
+    </div>
+
+<!--Workshop banner 2-->
+<div class="artist-card">
+    <div class = "artwork-content">
+        <h2 class="artist-title">Plein Air Painting: Landscapes in Gouache</h2>
+            <h4 class="artist-name">ANDREW PENA</h4>
+            <h6 class="title">Gouache Artist</h6>
+            <p>Paint along with gouache artist Andrew Peña in this live and interactive workshop as 
+                he teaches you how to paint only the shapes you need to describe the scene you see when plein air painting (from a reference).</p>
+            <div>
+                <button class="artist-button">Add to cart</button>
+            </div>
+    </div>
+    <!-- image is animated in CSS to slide in from the right -->
+    <img class="subs-image" src="images/workshop2.jpg" width=400>
+     <!-- image from Etchrlab.com -->
+</div>
+
+<div class="load-more">
+    <button>Load more</button>
+</div>
+
+<!--Newsletter-->
+    <div class="newsletter">
+        <div class="newsletter-title"> 
+        <h2>Subscribe to our Newsletter</h2>    
+            <span class="container-email">
+                <input class="newsletter-email" type="text" placeholder="Email address" name="mail" required>
+            </span>
+            <span class="container">
+                <button class="sign-up-btn" type="submit">Sign up</button>
+            </span>
+        </div>
+    </div>
+
+<!--Footer-->
+<footer>
+    <div class="footer-section">
+        <ul class="footer-bullet-list">
+            <li><a class="footer-list-item">About Us</a></li>
+            <li><a href="#" class="footer-list-item">Contact Us</a></li>
+            <li><a href="#" class="footer-list-item">Advertise</a></li>
+            <li><a href="#" class="footer-list-item">Jobs</a></li>
+        </ul>
+    </div>
+    <div class="sns-footer">
+        <h2>Follow us on Social Media</h2>   
+       <span class="social-media-section">
+           <!-- Icons made by https://www.flaticon.com/authors/freepik -->
+           <img class="facebook" src="images/001-facebook.svg" alt="Facebook Icon">
+           <img class="instagram" src="images/002-instagram.svg" alt="Instagram Icon">
+           <img class="twitter" src="images/003-twitter.svg" alt="Twitter Icon">
+           <img class="linkedin" src="images/004-linkedin.svg" alt="Facebook Icon">
+       </span>
+   </div>
+    <!-- final small footer -->
+    <div class="footer-small">
+        <address>Registered address: street, city, telephone no.</address>
+        <div class="terms-and-conditions">
+            © 2020 Chicago Art Magazine
+22 Old Queen Street, Chicago, SW1H 9HP
+        </div>
+    </div>
+</footer>
+<!--External Javascript file-->
+<script src="/script/myScript.js"></script>
+    </body>
+</html>

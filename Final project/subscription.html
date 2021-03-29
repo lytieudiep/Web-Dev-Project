@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Chicago Art</title>
+  <meta charset="utf-8">
+  <meta name="description" content="This is a website to implement the wireframes for a Chicago Art Magazine">
+  <meta name="author" content="Team xx">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="refresh" content="600">
+  <meta name="keywords" content="Art Magazine">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="stylesheet/style.css">
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--Handlebars Installation-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.js"></script>
+  <!--JQuery library-->
+  <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+  <header>
+    <!--Main nav-->
+    <div class="main-header">
+      <nav class="main-nav" id="myNav">
+        <ul>
+          <!--Logo-->
+          <li><object data="images/Logo.png" width="70"></object></li>
+          <li class="main-nav-item"><a class="active-page" href="index.html">Home</a></li>
+          <li class="main-nav-item"><a href="art-events.html">Art Events</a></li>
+          <li class="main-nav-item"><a href="featured-artists.html">Featured Artists </a></li>
+          <li class="main-nav-item"><a href="workshops.html">Workshops</a></li>
+          <li class="main-nav-item">
+            <a href="Subscription.html">Subscription</a>
+          </li>
+        </ul>
+        <!--Set hamburger icon on mobile view as a dropdown menu icon-->
+        <div class="dropdown">
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+        <!--Subscribe button is spanned at the top right corner of the website-->
+        <span class="main-nav-item">
+          <button class="nav-button" href="subscription.html" type="submit">Subscribe</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <!--Dropdown menu showing up when hamburger icon is clicked on mobile view only-->
+  <div id="dropdown-menu" class="dropdown-content hidden">
+    <ul class="dropdown-bullet-list">
+
+      <li><a class="active-page" href="index.html">Home</a></li>
+      <li><a href="art-events.html">Art Events</a></li>
+      <li><a href="featured-artists.html">Featured Artists</a></li>
+      <li><a href="workshops.html">Workshops</a></li>
+      <li><a href="subscription.html">Subscription</a></li>
+    </ul>
+  </div>
+
+  <!--Hero Image and Title for homepage-->
+  <div class="hero-homepage">
+    <img src="images/hero-subscribe.png" id="subs-hero" atl="subscription" />
+    <div class="hero-content">
+      <script id="template" type="template/handlebars">
+                <h1>{{caps "Subscribe- Just a cup of coffee"}}</h1>
+              </script>
+      <span id="target"></span>
+      <p class="hero-description">Members support the magazine’s mission while enjoying a thousand articles plus more information about the exhibitions and discount museum's tickets around the world!</p>
+    </div>
+  </div>
+  <!--Main form section-->
+  <main>
+    <div class="container-subscription">
+      <h2>Checkout Form</h2>
+    </div>
+    <!--Preview products in card section- will be floated in the right side-->
+    <!--Reference template form from Bootstrap, edited to fix with Magazine website purpose-->
+    <div class="card-row">
+      <div class="your-card">
+        <h4 class="your-card-title">
+          <span class="text-muted">Your cart</span>
+        </h4>
+
+        <ul class="list-group">
+          <li class="list-item">
+            <div>
+              <h6 class="my-product">Watercolor workshop</h6>
+              <small class="text-muted">Watercolor workshop with Jean Arnaud</small>
+            </div>
+            <span class="text-muted">$12</span>
+          </li>
+          <li class="list-item">
+            <div>
+              <h6 class="my-product">Gouache workshop</h6>
+              <small class="text-muted">Gouache workshop with Andrew Pena</small>
+            </div>
+            <span class="text-muted">$8</span>
+          </li>
+          <li class="list-item">
+            <div>
+              <h6 class="my-product">Monthly subscribe</h6>
+              <small class="text-muted">$1 x 12</small>
+            </div>
+            <span class="text-muted">$12</span>
+          </li>
+          <li class="list-item">
+            <div class="text-success">
+              <h6 class="my-product"> Promo code</h6>
+              <small>SAMPLECODE</small>
+            </div>
+            <span class="text-success">-$2</span>
+          </li>
+          <li class="list-item">
+            <span>Total (USD)</span>
+            <strong>$30</strong>
+          </li>
+        </ul>
+
+        <!--Redeem box and button-->
+        <form class="redeem box">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Promo code">
+            <button type="submit" class="redeem-code">Redeem</button>
+          </div>
+        </form>
+      </div>
+      <!--Main form to fill name, address-->
+      <div class="main-form">
+        <h4 class="your-card-title">Billing address</h4>
+        <div id="checkout-form-1">
+          <form class="needs-validation" novalidate>
+            <div class="card-row g-3">
+              <div class="col-sm">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" placeholder value require>
+                <div class="invalid-feedback">First Name is required</div>
+              </div>
+              <div class="col-sm">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" placeholder value require>
+                <div class="invalid-feedback">Last Name is required</div>
+              </div>
+              <div class="col-3">
+                <label for="username" class="form-label">Username</label>
+                <div class="input-group">
+                  <span class="input-group-text">@</span>
+                  <input type="text" class="form-control" id="username" placeholder="username" required>
+                  <div oninvalid="alert('Username is required');" class="invalid-feedback">Your username is required
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <label for="email" class="form-label">Email
+                  <span class="text-muted">(Optional)</span>
+                </label>
+                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                <div class="invalid-feedback">Please enter a valid email address for shipping update</div>
+              </div>
+              <div class="col-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="1234 Main st">
+                <div class="invalid-feedback">Please enter your shipping address</div>
+              </div>
+              <div class="col-3">
+                <label for="address2" class="form-label">Address 2</label>
+                <input type="text" class="form-control" id="address2" placeholder="Appartment for suite">
+              </div>
+              <div class="col-7">
+                <label for="country" class="form-label">Country</label>
+                <select class="form-select" id="country" required>
+                  <option value>Choose...</option>
+                  <option>United States</option>
+                </select>
+                <div class="invalid-feedback">Please select a valid country</div>
+              </div>
+              <div class="col-8">
+                <label for="states" class="form-label">States</label>
+                <select class="form-select" id="states" required>
+                  <option value>Choose...</option>
+                  <option>California</option>
+                </select>
+                <div class="invalid-feedback">Please select a valid state</div>
+              </div>
+              <div class="col-9">
+                <label for="zip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="zip" placeholder required>
+                <div class="invalid-feedback">Please select a valid state</div>
+              </div>
+            </div>
+            <!--Shipping status checkboxes-->
+            <hr class="my-4">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="same-address">
+              <label class="form-check-label" for="same-address">Shipping address is the same as my billing
+                address</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="save-info">
+              <label class="form-check-label" for="save-info">Save this information for next time</label>
+            </div>
+            <hr class="my-4">
+
+            <!--Choose payment type checkboxes-->
+            <h4 class="your-card-title">Payment</h4>
+            <div class="payment-choice">
+              <div class="form-check">
+                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                <label class="form-check-label" for="credit">Credit Card</label>
+              </div>
+              <div class="form-check">
+                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                <label class="form-check-label" for="credit">Debit Card</label>
+              </div>
+              <div class="form-check">
+                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                <label class="form-check-label" for="credit">Paypal</label>
+              </div>
+            </div>
+            <!--Payment information form-->
+            <div class="card-info">
+              <div class="name-card">
+                <label for="cc-name" class="form-label">Name on card</label>
+                <input type="text" class="form-control" id="cc-name" placeholder required>
+                <small class="text-muted">Full name as displayed on card</small>
+                <div class="invalid-feedback">Name on card is required</div>
+              </div>
+              <div class="card-num">
+                <label for="cc-number" class="form-label">Card number</label>
+                <input type="text" class="form-control" id="cc-number" placeholder required>
+                <div class="invalid-feedback">Card number is required</div>
+              </div>
+              <div class="expiration">
+                <label for="cc-expiration" class="form-label">Expiration</label>
+                <input type="text" class="form-control" id="cc-expiration" placeholder required>
+                <div class="invalid-feedback">Expiration date is required</div>
+              </div>
+              <div class="ccv">
+                <label for="cc-ccv" class="form-label">CCV</label>
+                <input type="text" class="form-control" id="cc-ccv" placeholder required>
+                <div class="invalid-feedback">CCV is required</div>
+              </div>
+            </div>
+            <hr class="my-4">
+            <button class="checkout" type="submit">Pay now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!--Footer-->
+  <footer>
+    <div class="footer-section">
+      <ul class="footer-bullet-list">
+        <li><a class="footer-list-item">About Us</a></li>
+        <li><a href="#" class="footer-list-item">Contact Us</a></li>
+        <li><a href="#" class="footer-list-item">Advertise</a></li>
+        <li><a href="#" class="footer-list-item">Jobs</a></li>
+      </ul>
+    </div>
+    <div class="sns-footer">
+      <h2>Follow us on Social Media</h2>
+      <span class="social-media-section">
+        <!-- Icons made by https://www.flaticon.com/authors/freepik -->
+        <img class="facebook" src="images/001-facebook.svg" alt="Facebook Icon">
+        <img class="instagram" src="images/002-instagram.svg" alt="Instagram Icon">
+        <img class="twitter" src="images/003-twitter.svg" alt="Twitter Icon">
+        <img class="linkedin" src="images/004-linkedin.svg" alt="Facebook Icon">
+      </span>
+    </div>
+    <!-- final small footer -->
+    <div class="footer-small">
+      <address>Registered address: street, city, telephone no.</address>
+      <div class="terms-and-conditions">
+        © 2020 Chicago Art Magazine
+        22 Old Queen Street, Chicago, SW1H 9HP
+      </div>
+    </div>
+  </footer>
+  <!--External Javascript file-->
+  <script src="/script/myScript.js"></script>
+</body>
+
+</html>

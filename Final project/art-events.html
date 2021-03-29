@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Chicago Art</title>
+        <meta charset="utf-8">
+        <meta name="description" content="This is a website to implement the wireframes for a Chicago Art Magazine">
+        <meta name="author" content="Team xx">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="refresh" content="600">
+        <meta name="keywords" content="Art Magazine">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">    
+        <!--Stylesheet-->
+        <link rel="stylesheet" type="text/css" href="stylesheet/style.css" >
+        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Include Handlebars from a CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <!--Main nav-->
+            <div class="main-header">
+                <nav class="main-nav" id="myNav">            
+                    <ul>
+                        <!--Logo-->
+                        <li><object data="images/Logo.png" width="70"></object></li>
+                        <li class="main-nav-item"><a class="active-page" href="index.html">Home</a></li>
+                        <li class="main-nav-item"><a href="art-events.html">Art Events</a></li>
+                        <li class="main-nav-item"><a href="featured-artists.html">Featured Artists</a></li>
+                        <li class="main-nav-item"><a href="workshops.html">Workshops</a></li>
+                        <li class="main-nav-item"><a href="Subscription.html">Subscription</a></li>
+                    </ul> 
+                    <!--Set hamburger icon on mobile view as a dropdown menu icon-->
+                    <div class="dropdown">
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                    <!--Subscribe button is spanned at the top right corner of the website-->
+                    <span class="main-nav-item">
+                        <button class="nav-button" href="subscription.html" type="submit">Subscribe</button>
+                    </span>
+                </nav>
+            </div>
+        </header>
+
+    <!--Dropdown menu showing up when hamburger icon is clicked on mobile view only-->  
+        <div id="dropdown-menu" class="dropdown-content hidden">
+            <ul class="dropdown-bullet-list">
+
+                <li><a class="active-page" href="index.html">Home</a></li>
+                <li><a href="art-events.html">Art Events</a></li>
+                <li><a href="featured-artists.html">Featured Artists</a></li>
+                <li><a href="workshops.html">Workshops</a></li>
+                <li><a href="subscription.html">Subscription</a></li>
+            </ul>
+        </div>
+            <!--Hero Image and Title for homepage-->
+            <div class="hero-homepage">
+                <img src="images/hero-artevents.png" atl="Monet" width="400"/>
+                <div class="hero-content">
+                    <!--Handlebars Title-->
+                    <script id="template" type="template/handlebars">
+                        <h1>{{caps "Explore Local Art Events"}}</h1>
+                    </script>  
+                    <span id="target"></span>
+                    
+                    <p class="hero-description">Explore our wide-ranging exhibitions and various virtual programs.
+
+                    </p>
+                    <button class="hero-button">Explore</button>
+                </div> 
+            </div>
+    
+
+    <!--Cards components six cards -->
+    <!--Event's content from https://www.artic.edu/exhibitions-->
+    <section class="art-events-section">
+        <div class="events-section triple-grid">
+
+            <div id="div1" class="one">
+                <div class="card">
+                    <!-- the image height is fixed so all the cards share the same dimensions -->
+                    <div class="card-header">
+                        <div class="card-image">
+                            <img src="images/event-card.jpg" alt="van gogh"/>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <h3>Immersive Van Gogh</h3>
+                        <p>The US premiere of the new Immersive Van Gogh Exhibit 
+                            from creators of the blockbuster show in Paris seen by over 2 million visitors and still wowing crowds in Toronto.</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="card-cta">
+                            <button class="button">More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="div2" class="two">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-image">
+                            <img src="images/monet.jpg" alt="Event 2"/>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Monet and Chicago</h3>
+                        <p>Bisa Butler’s portrait quilts vividly capture personal and historical narratives of Black life.</p>
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-cta">
+                            <button class="button">More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="div3" class="three">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-image">
+                            <img src="images/event 3.jpg" alt="event3"/>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        
+                        <h3>Toulouse-Lautrec and the Celebrity Culture of Paris</h3>
+                        <p>Welcome to Montmartre—an outlying Parisian neighborhood known for its cabarets and dance halls—where a flamboyant nightlife exploded in the late 19th century. 
+                        </p> 
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-cta">
+                            <button class="button">More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div4" class="four">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-image">
+                            <img src="images/event4.jpg" alt="Event 4"/>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>"From the Center" by Faheem Majeed</h3>
+                        <p>Faheem Majeed’s first solo exhibition at South Side Community Art Center, “From The Center"</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-cta">
+                            <button class="button">More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div5" class="five">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-image">
+                            <img src="images/event5.jpg" alt="Event 5"/>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Intimate Modernity</h3>
+                        <p>In the 1890s, a new generation of artists emerged who came of age after the height of 
+                            Impressi onism and pioneered a variety of different artistic styles</p> 
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-cta">
+                            <button class="button">More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div6" class="six">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-image">
+                            <img src="images/event6.jpg" alt="Event 6"/>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        
+                        <h3>Louise Lawler: Andy in Chicago</h3>
+                        <p>Louise Lawler’s work since the 1970s has considered the lives of artworks in museums, private collections, galleries, storage facilities, and auction houses 
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-cta">
+                            <button class="button">More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </section>
+
+
+<!--Newsletter-->
+    <div class="newsletter">
+        <div class="newsletter-title"> 
+        <h2>Subscribe to our Newsletter</h2>    
+            <span class="container-email">
+                <input class="newsletter-email" type="text" placeholder="Email address" name="mail" required>
+            </span>
+            <span class="container">
+                <button class="sign-up-btn" type="submit">Sign up</button>
+            </span>
+    </div>
+    </div>
+<!--Footer section, showing up in every page-->
+    <footer>
+        <div class="footer-section">
+            <ul class="footer-bullet-list">
+                <li><a class="footer-list-item">About Us</a></li>
+                <li><a href="#" class="footer-list-item">Contact Us</a></li>
+                <li><a href="#" class="footer-list-item">Advertise</a></li>
+                <li><a href="#" class="footer-list-item">Jobs</a></li>
+            </ul>
+        </div>
+        <div class="sns-footer">
+            <h2>Follow us on Social Media</h2>   
+        <span class="social-media-section">
+            <!-- Icons made by https://www.flaticon.com/authors/freepik -->
+            <img class="facebook" src="images/001-facebook.svg" alt="Facebook Icon">
+            <img class="instagram" src="images/002-instagram.svg" alt="Instagram Icon">
+            <img class="twitter" src="images/003-twitter.svg" alt="Twitter Icon">
+            <img class="linkedin" src="images/004-linkedin.svg" alt="Facebook Icon">
+        </span>
+    </div>
+        <!-- final small footer -->
+        <div class="footer-small">
+            <address>Registered address: street, city, telephone no.</address>
+            <div class="terms-and-conditions">
+                © 2020 Chicago Art Magazine
+                22 Old Queen Street, Chicago, SW1H 9HP
+            </div>
+        </div>
+    </footer>
+<!--External Javascript file-->
+<script src="/script/myScript.js"></script>
+</body>
+</html>

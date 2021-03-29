@@ -1,0 +1,1122 @@
+
+
+/*Base style*/
+
+body{
+    font-family: "Georgia", serif;
+    font-size: 18px;
+    margin: 0;
+}
+
+li{
+    margin: 0 1em;
+}
+
+
+h1{
+    font-family: "Open Sans", sans-serif;
+    background-color: #ffffff;
+    color:#0B0754;
+    font-size: 3.5rem;
+    margin-left: 1em;
+}
+div{
+    display: block;
+}
+section{
+    display: block;
+}
+input{
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    cursor: text;
+    margin: 0em;
+    
+}
+
+
+/* Header and nav section style*/
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    float: left;
+    width: 100%;
+    font-size: small;
+    color:#4056A1;
+}
+/* Add font style and color for main nav*/
+nav{
+    overflow: hidden;
+    display: flex;
+    width: 40%;
+    color:#4056A1;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    padding-bottom: 1em;
+}
+
+.main-header {
+    width: 100%;
+}
+/* style the main nav*/
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.main-nav a{
+    color: #4056A1;
+    text-decoration: none;
+
+}
+/* Style the ul inside the navigation bar */
+.main-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    margin-right: 1.5em;
+    font-size: 1.5rem;
+    color: white;
+}
+/* Change the color of links on hover */
+.main-nav a:hover{
+    text-decoration: underline blue;
+}
+/*Hide the main nav hamburger icon for laptop size*/
+.main-nav .icon  {
+    display: none;
+  }
+/*Style the Subscription button on the left side of main nav*/
+.nav-button{
+    background-color: #F13C1F;
+    color: #ffffff;
+    border-radius: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    padding: 12px 28px;
+    width: 150px;
+    margin: 1.25em 5em;
+    border: none;
+    font-weight: bold;
+}
+.nav-button:hoover{
+    background-color: #FB8D89;
+}
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). 
+Show the link that contains should open and close the main nav(.icon) */
+/*Main source from w3school.com */
+@media screen and (max-width: 600px) {
+    .main-nav-item {
+        display: none;
+    }
+    .main-nav a.icon {
+      float: right;
+      display: block;
+      margin-top: 1.5em;
+      margin-right: 2.5em;
+    }
+    
+}
+/* The "responsive" class is added to the main nav with JavaScript when the user clicks on the icon. 
+This class makes the main nav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+    .main-nav.responsive {position: relative;}
+    .main-nav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .main-nav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .dropdown {
+        position: relative;
+        display: block;
+    }
+      
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        min-width: 160px;
+    }
+    .dropdown-content .not-hidden {
+        display: block ;
+        position: absolute;
+    }
+    .dropdown-content a {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 600;
+        color:#4056A1;
+        padding: 2px 3px;
+        text-decoration: none;
+        display: block;
+        text-align: right;
+        margin-right: 1.5em;
+    }
+    .dropdown-bullet-list {
+        list-style-type: none;
+        text-align: right;
+        padding-right: 2em;
+    }
+
+}
+.hidden {
+    display:none;
+}
+
+/* Main content section*/
+/*set size and position for Main Hero home page*/
+@media screen and (min-width: 600px) {
+/* Desktop view- Hero image is floated to the right */
+    .hero-homepage img{
+        width: 50%;
+        display: flex;
+        float: right;
+        margin-bottom: 4em;
+    }
+    #subs-hero{
+        width: 38%;
+        padding-right: 3em;
+        margin-right:1em;
+        }
+}
+@media screen and (max-width: 600px) {
+    /*Mobile view- Hero image is centering */
+    .hero-homepage img{
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #subs-hero{
+        padding-right: 3em;
+        margin-right:1em;
+        }
+}
+
+/*Set size and position for main hero image on Subscription page*/
+#subs-hero{
+    width: 38%;
+    padding-right: 3em;
+    margin-right:1em;
+}
+/*Style the main title*/
+.hero-title {
+    font-size: 2.5em;
+    font-weight: 400;
+    padding-left:1.25em;
+
+}
+/*Style the main introduction on the right side of main image*/
+.hero-description{
+    color:#707070;
+    padding-left: 3em;
+    padding-bottom: 2em;
+    line-height: 1.3;
+}
+/*Style the button showing up below the description on homepage*/
+.hero-button{
+    background-color: #F13C1F;
+    color: #ffffff;
+    border-radius: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    padding: 12px 28px;
+    width: 150px;
+    margin: 1em 4em;
+    border: none;
+    font-weight: bold;
+}
+/*Color change when button hovered*/
+.hero-button:hover {
+    background-color: #FB8D89;
+}
+/*Homepage banner*/
+.homepage-banner{
+    background-color: #ffffff;
+    width: 100%;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+}
+.homepage-banner ul{
+    display: flex;
+    font-family: "Open Sans", sans-serif;
+    color: #0B0754;
+    justify-content: inherit;
+}
+.banner-bullet-list{
+    list-style: none;
+    
+}
+.banner-list-name{
+    list-style: none;
+    text-align: left;
+}
+.banner-num{
+    font-size: 2.5rem;
+    font-weight: 700;
+    z-index: 1;
+}
+.banner-description{
+    
+    font-size: 1.5rem;
+    font-style: italic;
+}
+.banner-button:hoover{
+    background-color: #FB8D89;
+}
+#list-name{
+    font-size: 1.2rem;
+    font-style:italic;
+    font-weight: 400;
+}
+
+@media screen and (min-width: 600px) {
+/*Desktop view */
+    /*Homepage section*/
+    .homepage-section {
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "title title title"
+            "sect1 sect2 sect3";
+        padding: 1em 0;
+        justify-content: center;
+    }
+
+    /*Events section */
+    .events-section {
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "title title title"
+            "sect1 sect2 sect3"
+            "sect4 sect5 sect6";
+        padding: 1em 0;
+        justify-content: center;
+        margin-top: 20em;
+    }
+}
+
+/* Card Component */
+.card {
+background-color: #fff;
+height: auto;
+border-radius: 5px;
+filter: drop-shadow(10px 12px 10px #222);
+margin-left: 10px;
+margin-right: 10px;
+margin-bottom: 4em;
+}
+
+.card-section-title h2{
+text-align: left;
+padding: 1em;
+}
+
+.card-header img {
+width: 100%;
+height: 300px;
+}
+.card-body{
+    height: 130px;
+}
+.card-body h3 {
+font-family: 'Open Sans', serif;
+color: #707070;
+font-size: 18px;
+text-align: left;
+padding-left: 1em;
+font-weight: normal;
+}
+
+.card-body h6 {
+margin-top: 1em;
+color: #0B0754;
+font-size: 16px;
+text-align: left;
+padding-left: 1em;
+}
+.card-body p{
+    font-size: 16px;
+    text-align: left;
+    padding-left: 1em;
+}
+
+.card-footer {
+height: auto;
+padding-top: 20px;
+padding-bottom: 20px;
+padding-left: 30px;
+padding-right: 30px;
+}
+
+.card-cta .button {
+color: #fff;
+background-color: #242248;
+padding: 12px 28px;
+border-radius: 20px;
+border-color: transparent;
+position: relative;
+text-align: center;
+width: 80%;
+height: 50px;
+font-size: 18px;
+font-family: 'Open sans', sans-serif;
+margin-left: 2em;
+}
+.card-cta .button:hover{
+background-color:#BED2FA;
+color: white;
+text-decoration: underline;
+}
+
+.one, .two, .three, .four, .five, .six {
+margin: 1em;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+animation:mymove 4s;
+animation-name: mymove;
+animation-direction: alternate;
+animation-iteration-count: 1; 
+}
+/*Carousel images on event card */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+  
+/* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+  
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+  
+.active, .dot:hover {
+    background-color: #717171;
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+}
+/* Set animation for cards on the homepage and art events page*/
+/* Source from w3school.com- edited to fix with website's purpose*/
+@keyframes mymove {
+    from {left: left:0px; top:200px;}
+    to { left:0px; top:0px;}
+}
+#div1 {animation-timing-function: ease-out;}
+#div2 {animation-timing-function: linear;}
+#div3 {animation-timing-function: ease-in;}
+#div4 {animation-timing-function: ease-out;}
+#div5 {animation-timing-function: linear;}
+#div6 {animation-timing-function: ease-in;}
+
+.section-title-box {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 2em;
+}
+
+.one {
+grid-area: sect1;
+
+}
+
+.two {
+grid-area: sect2;
+}
+
+.three {
+grid-area: sect3;
+}
+
+.four {
+    grid-area: sect4;
+    
+}
+
+.five {
+    grid-area: sect5;
+}
+
+.six {
+    grid-area: sect6;
+}
+
+/*Subscription banner*/
+@media screen and (min-width: 600px) {
+/*Desktop view*/
+    .subs-wrapper{
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        flex: 0 0 auto;
+        height: 400px;
+        width: 85%;
+        margin: 3em 6em;
+        background-color: #BED2FA;
+    }
+    .banner-button{
+        background-color: #F13C1F;
+        color: #ffffff;
+        border-radius: 20px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        padding: 0.5em 0.5em;
+        width: 150px;
+        margin: 0.5em 3em;
+        border: none;
+    }
+}
+@media screen and (max-width: 568px) {
+/*mobile view*/
+    .subs-wrapper{
+        display: block;
+        position: inherit;
+        background-color: #BED2FA;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+        text-align: center;
+        margin: 0 auto;
+        padding-bottom: 1em;
+
+    }
+    .subs-wrapper img{
+        width: 100%;
+        margin: 0 auto;
+
+    }
+    
+    .banner-button{
+        background-color: #F13C1F;
+        color: #ffffff;
+        border-radius: 20px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        padding: 0.5em 0.5em;
+        width: 150px;
+        margin: 1em 6em;
+        border: none;
+    }
+}
+
+.subs-intro{
+    flex-direction: column;
+    position:static;
+    padding-top: 1em;
+    text-align: left;
+    line-height: 2;
+    padding-left: 1em;
+
+}
+.subs-intro h2{
+    padding-left: 1.5em;
+}
+.subs-image{
+    padding-left: 0em;
+}
+
+.banner-button:hover {
+    background-color: #FB8D89
+}
+
+/* Featured Artists page, main content section*/
+@media screen and (min-width: 600px) {
+    /*desktop view */
+    .artist-card{
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        width: 85%;
+        margin: 3em 6em;
+        background-color: #BED2FA;
+    }
+    .artwork-content p{
+        text-align: left;
+        padding-left: 1em;
+    }
+    .artwork-content figcaption{
+        font-size: 12px;
+        color: grey;
+        font-style: italic;
+        padding-left: 1.5em;
+    }
+    .artwork-content h2{
+        font-family: "Open Sans", sans-serif;
+        font-size: 28px;
+        color: #0B0754;
+        padding-left: 0.6em;
+    }
+}
+@media screen and (max-width:568px ){
+    .artist-card{
+        display: block;
+        position: inherit;
+    }
+    .artwork-content{
+        background-color: #BED2FA;
+
+    }
+    .artwork-content p{
+        text-align: left;
+        margin: 0 auto;
+        padding: auto;
+        font-size: 1rem;
+
+    }
+    .artwork-content figcaption{
+        font-size: 12px;
+        color: grey;
+        font-style: italic;
+        padding: auto;
+    }
+    .artwork-content h2{
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.5rem;
+        color: #0B0754;
+        padding-left: auto;
+    }
+    .artist-card img{
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+.artist-image{
+    padding-left: 0em;
+}
+.artwork-content{
+    flex-direction: column;
+    padding-top: 1em;
+    text-align: left;
+    line-height: 1.8;
+    padding-left: 2em;
+}
+
+
+
+.artist-button{
+    background-color: #F13C1F;
+    color: #ffffff;
+    border-radius: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    padding: 0.5em 0.5em;
+    width: 150px;
+    margin: 3em 1em;
+    border: none;
+}
+/*workshop page*/
+.artist-name{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    padding-left: 1em;
+}
+.title{
+    padding-left: 1.5em;
+    text-decoration: underline;
+    margin-top: -1em;
+}
+
+.load-more button{
+    display: flex;
+    justify-content: center;
+    background-color: #F13C1F;
+    color: #ffffff;
+    border-radius: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    padding: 0.75em 1em;
+    width: 150px;
+    margin: 0 auto;
+    border: none;
+}
+
+/*Newsletter section*/
+.newsletter{
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    font-weight: bold;
+    padding: 2em;
+    margin: 2em;
+}
+.newsletter-title h2{
+    font-size: 40px;
+    color:#0B0754;
+}
+.container-email{
+    width: 100%;
+}
+.newsletter-email[type=text] {
+    padding: 1em 2em;
+    margin: 5px 0;
+    font-style: italic;
+    border: 0.5px solid;
+
+}
+.container button{
+    background-color: #F13C1F;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    padding: 0.75em 0.5em;
+    width: 150px;
+    border: none;
+}
+.sign-up-btn:hoover{
+    background-color: #FB8D89;
+}
+
+/*Subscription page and checkout form */
+/* Template CSS code form from Bootstrap- edited to fix with art magazine's purpose */
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+@media (min-width: 786px){
+    .container-subscription h2{
+        margin-top: 10em;
+        font-family: "Open-Sans", sans-serif;
+        font-size: 2rem;
+        padding-left: 1em;
+        margin-left: 1em;
+    }
+}
+@media (max-width: 568px){
+    .container-subscription h2{
+        font-family: "Open-Sans", sans-serif;
+        font-size: 2rem;
+        padding-left: 1em;
+        margin-left: 1em;
+    }
+}
+
+@media (min-width: 768px){
+/*Desktop view */
+    .card-row{
+        font-family: "Open Sans", sans-serif;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 1em 2em;
+        margin-top: 1rem;
+        margin-right: 1rem;
+    }
+}
+@media (max-width: 567px){
+/*Mobile view*/
+    .card-row{
+        font-family: "Open Sans", sans-serif;
+        display: block;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 1em 2em;
+        margin-top: 1rem;
+        margin-right: 1rem;
+    }
+}
+@media (min-width: 786px){
+    .your-card{
+        order: 6;
+        flex: 0 0 auto;
+        width: 33%;
+    }
+}
+
+
+.your-card-title{
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    display: flex;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    padding-left: 1.5em;
+}
+.list-group{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+}
+.list-item{
+    display: flex;
+    justify-content: space-between;
+    border-top-right-radius: inherit;
+    line-height: 1.25;
+    position: relative;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0,0,.125);
+}
+.my-product{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.my-product h6{
+    font-size: 1rem;
+}
+.text-muted{
+    color:#6c757d;
+}
+.small{
+    font-size: 0.875em;
+}
+.text-success{
+    color: #198754;
+}
+.redeem{
+    padding: 0.5rem;
+}
+
+.box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0,0,.125);
+    border-radius: 0.25rem;
+}
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+@media (min-width: 786px){
+
+    .main-form{
+        flex: 0 0 auto;
+        width: 66.6%;
+    }
+}
+@media (max-width: 568px){
+    .main-form{
+        width: 100%;
+    }  
+}
+.form{
+    display: block;
+    margin-top: 0em;
+}
+@media (min-width: 768px){
+    .col-sm{
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
+
+label{
+    display: inline-block;
+    padding: 12px 12px 12px 0;
+
+}
+.form-label{
+    margin-bottom: 0.5rem;
+}
+.input-group-text {
+    display: flex;
+    align-items: center;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+@media (min-width: 786px){
+    .form-select{
+        display: block;
+        width: 100%;
+        padding: .375rem 1.75rem .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-position: right .75rem center;
+        background-size: 16px 12px;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        appearance: none;
+    }
+}
+@media (max-width: 568px){
+    .form-select{
+        display: block;
+        padding: .375rem 1.75rem .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-position: right .75rem center;
+        background-size: 16px 12px;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        appearance: none;
+    }
+}
+
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: .875em;
+    color: #dc3545;
+}
+.col-3{
+    flex: 0 0 auto;
+    width: 100%;
+}
+.input-group>.form-control, .input-group.form-select {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+}
+.col-7{
+    flex: 0 0 auto;
+    width: 41.6%;
+}
+.col-8{
+    flex: 0 0 auto;
+    width: 33.3%;
+}
+
+@media (min-width: 568px){
+    .col-9{
+        flex: 0 0 auto;
+        width: 25%;
+    }
+}
+
+hr:not([size]) {
+    height: 1px;
+}
+.my-4 {
+    margin-top: 1.5rem!important;
+    margin-bottom: 1.5rem!important;
+}
+hr {
+    margin: 1rem 0;
+    color: inherit;
+    background-color: currentColor;
+    border: 0;
+    opacity: .25;
+}
+.form-check {
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 1.5em;
+    margin-bottom: .125rem;
+}
+.form-check-input:valid:checked {
+    background-color: #198754;
+}
+.form-check-input:valid {
+    border-color: #198754;
+}
+.form-check-input:checked[type=checkbox] {
+    background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e);
+}
+.expiration{
+    flex: 0 0 auto;
+    width: 25%;
+}
+.ccv{
+    flex: 0 0 auto;
+    width: 25%;
+}
+.checkout {
+    width: 100%;
+    background-color: #F13C1F;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    padding: 0.75em 0.5em;
+    border: none;
+}
+/*Footer*/
+footer{
+    flex-direction: row;
+    float: center;
+    width: 100%;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    background: #FB8D89;
+	background: -moz-linear-gradient(top, #95b9e2 0%, #FB8D89 100%);
+	background: -webkit-linear-gradient(#95b9e2 0%, #FB8D89 100%);
+	background: -o-linear-gradient(#95b9e2 0%, #FB8D89 100%);
+	background: linear-gradient(#95b9e2 0%, #FB8D89 100%); 
+}
+footer a{
+    color: #242248;
+    text-decoration: none;
+}
+@media (min-width: 568px){
+    .footer-section ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-right: 1.5em;
+        font-size: 1.25rem;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+    
+    }
+}
+@media (max-width: 786px){
+    .footer-section ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-right: 1.5em;
+        font-size: 1rem;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+    
+    }
+}
+
+.footer-bullet-list{
+    list-style-type: none;
+}
+.footer-list-item{
+    text-align: center;
+}
+.sns-footer{
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    padding-bottom: 0.5em;
+}
+.social-media-section{
+    padding-left: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-between;
+}
+.facebook {
+    width: 35px;
+    margin-right: 5%;
+}
+.instagram {
+    width: 35px;
+    margin-right: 5%;
+
+}
+
+.twitter {
+    width: 35px;
+    margin-right: 5%;
+}
+
+.linkedin {
+    width: 35px;
+    margin-right: 5%;
+}
+.footer-small{
+    text-align: center;
+    padding-top: 0.5em;
+    font-size: 0.75rem;
+}
+  
+

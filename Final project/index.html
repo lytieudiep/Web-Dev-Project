@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chicago Art</title>
+    <meta charset="utf-8">
+    <meta name="description" content="This is a website to implement the wire frames for a Chicago Art Magazine">
+    <meta name="author" content="Diep Ly">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="refresh" content="600">
+    <meta name="keywords" content="Art Magazine">
+    <!-- Fonts [1] -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="stylesheet/style.css">
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Include Handlebars from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <!--Main nav-->
+        <div class="main-header">
+            <nav class="main-nav" id="myNav">
+                <ul>
+                    <!--Logo-->
+                    <li><object data="images/Logo.png" width="70"></object></li>
+                    <li class="main-nav-item"><a class="active-page" href="index.html">Home</a></li>
+                    <li class="main-nav-item"><a href="art-events.html">Art Events</a></li>
+                    <li class="main-nav-item"><a href="featured-artists.html">Featured Artists</a></li>
+                    <li class="main-nav-item"><a href="workshops.html">Workshops</a></li>
+                    <li class="main-nav-item"><a href="subscription.html">Subscription</a></li>
+                </ul>
+                <!--Set hamburger icon on mobile view as a dropdown menu icon-->
+                <div class="dropdown">
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+                <!--Subscribe button is spanned at the top right corner of the website-->
+                <span class="main-nav-item">
+                    <button class="nav-button" href="subscription.html" type="submit">Subscribe</button>
+                </span>
+            </nav>
+        </div>
+    </header>
+
+    <!--Dropdown menu showing up when hamburger icon is clicked on mobile view only-->
+    <div id="dropdown-menu" class="dropdown-content hidden">
+        <ul class="dropdown-bullet-list">
+
+            <li><a class="active-page" href="index.html">Home</a></li>
+            <li><a href="art-events.html">Art Events</a></li>
+            <li><a href="featured-artists.html">Featured Artists</a></li>
+            <li><a href="workshops.html">Workshops</a></li>
+            <li><a href="subscription.html">Subscription</a></li>
+        </ul>
+    </div>
+
+    <!--Hero Image and Title for homepage-->
+    <div class="hero-homepage">
+        <img style="max-height: 100%;" src="images/hero-homepage1.png" alt="Discover Chicago" />
+        <!--All the hero images are from Freepik.com-->
+        <div class="hero-content">
+            <!--Create handlebars to control main title-->
+            <script id="template" type="template/handlebars">
+                    <h1>{{caps "Discover Chicago Art Culture"}}</h1>
+                </script>
+            <span id="target"></span>
+            <script>
+                var src = document.getElementById("template").innerHTML;
+                // compile the template
+                var template = Handlebars.compile(src);
+                Handlebars.registerHelper("caps", function (text) {
+                    return text.toUpperCase();
+                })
+                var rendered = template();
+                document.getElementById("target").innerHTML = rendered;
+                console.log(template({ doesWhat: "rocks!" })); 
+            </script>
+            <p class="hero-description">Explore thousands of artworks in the museum’s wide-ranging collection—from our world-renowned icons to lesser-known gems from every corner of the globe—as well as our books, writings, reference materials, and other resources.</p>
+            <button class="hero-button">Explore</button>
+        </div>
+    </div>
+    <!--Homepage banner- Animating numbers on banner-->
+    <div class="homepage-banner">
+        <div class="banner-num ">
+            <ul class="banner-bullet-list">
+                <li id="list-num" class="count">1552</li>
+                <li id="list-num" class="count">3555</li>
+                <li id="list-num" class="count">322</li>
+            </ul>
+
+            <ul class="banner-list-name">
+                <li id="list-name">Art Events per year</li>
+                <li id="list-name">Local Artists</li>
+                <li id="list-name">Free Workshops</li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Cards components. Three main cards to show the main content from Art Events, Artist and Workshop-->
+    <section class="main-page-section">
+        <div class="homepage-section triple-grid">
+            <!--Event section card-->
+            <div class="one">
+                <div class="card">
+                    <!-- the image height is fixed so all the cards share the same dimensions -->
+                    <div class="card-header">
+                        <!--Carousel images for each-->
+                        <div class="slideshow-container">
+                            <div class="mySlides fade">
+                                <div class="numbertext">1 / 3</div>
+                                <img src="images/event-card.jpg" alt="van gogh card">
+                            </div>
+
+                            <div class="mySlides fade">
+                                <div class="numbertext">2 / 3</div>
+                                <img src="images/immersive1.jpg">
+                            </div>
+
+                            <div class="mySlides fade">
+                                <div class="numbertext">3 / 3</div>
+                                <img src="images/immersive2.jpg">
+                            </div>
+
+                            <a class="prev" onclick="plusSlides('mySlides', -1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides('mySlides', 1)">&#10095;</a>
+
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <h6>Events</h6>
+                        <h3> Massive new immersive Van Gogh exhibition coming to Chicago. <wbr/>Ticket is sold out fast.
+                            <wbr/>Don't miss it!</h3>
+                        <!--Content from Immersive Chicago website-->
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-cta">
+                            <button class="button" type="submit">More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Featured artist card-->
+            <!--Images from artist's portfolio-->
+            <div id="div1" class="two">
+                <div class="card">
+                    <div class="card-header">
+                        <!--Carousel images for each-->
+                        <div class="slideshow-container">
+                            <div class="mySlides2 fade">
+                                <div class="numbertext">1 / 3</div>
+                                <img src="images/artistcard1.jpg" alt="Belinda artist">
+                            </div>
+
+                            <div class="mySlides2 fade">
+                                <div class="numbertext">2 / 3</div>
+                                <img src="images/artistcard2.jpg">
+                            </div>
+
+                            <div class="mySlides2 fade">
+                                <div class="numbertext">3 / 3</div>
+                                <img src="images/artistcard3.jpg">
+                            </div>
+
+                            <a class="prev" onclick="plusSlides('mySlides2', -1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides('mySlides2', 1)">&#10095;</a>
+                        </div>
+                   
+                        <div class="card-body">
+                            <h6>Featured Artists</h6>
+                            <h3>Meet Belinda — a Taiwanese American lettering artist and illustrator based in Chicago.
+                            </h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-cta">
+                                <button class="button" type="submit">More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Workshop card-->
+            <!--Image from Etchrlab.com and artist's facebook-->
+            <div id="div2" class="three">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="slideshow-container">
+                            <div class="mySlides3 fade">
+                                <div class="numbertext">1 / 3</div>
+                                <img src="images/worksop-card.jpg" alt="Workshop artist">
+                            </div>
+
+                            <div class="mySlides3 fade">
+                                <div class="numbertext">2 / 3</div>
+                                <img src="images/jean2.jpg">
+                            </div>
+
+                            <div class="mySlides3 fade">
+                                <div class="numbertext">3 / 3</div>
+                                <img src="images/jean3.jpg">
+                            </div>
+
+                            <a class="prev" onclick="plusSlides('mySlides3', -1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides('mySlides3', 1)">&#10095;</a>
+
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6>Workshops</h6>
+                        <h3>Urban Sketching: Demystifying Realism with Watercolor.</h3>
+                        <!--Content from Etchrlab.com-->
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-cta">
+                            <button class="button">More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Subscription banner showed up below the main cards, containing the information for the next issue of Chicago Art Magazine-->
+    <div id="div3" class="subs-wrapper">
+        <!-- image is flex in CSS to slide in from the right -->
+        <img class="subs-image" src="images/subs.jpg">
+        <!-- image from Freepik.com -->
+        <div class="subs-intro">
+            <h2>SUBSCRIBE TO OUR NEW ISSUE MARCH 2021</h2>
+            <ul>
+                <li>An interview with Maggi Hambling</li>
+                <li> Is France keeping its promises on restitution?</li>
+                <li> Can historic houses tell more complicated stories?</li>
+                <li>The art of Patricia Highsmith</li>
+                <!--Content from the website Communicationart.com-->
+            </ul>
+            <button class="banner-button">Subscribe</button>
+        </div>
+    </div>
+
+    <!--Newsletter where people can fill the email and subscribe for more information-->
+    <div class="newsletter">
+        <div class="newsletter-title">
+            <h2>Subscribe to our Newsletter</h2>
+            <span class="container-email">
+                <input class="newsletter-email" type="text" placeholder="Email address" name="mail" required>
+            </span>
+            <span class="container">
+                <button class="sign-up-btn" type="submit">Sign up</button>
+            </span>
+        </div>
+    </div>
+
+
+    <!-- Footer contains the links, social media icons and showed up in every pages-->
+    <footer>
+        <div class="footer-section">
+            <ul class="footer-bullet-list">
+                <li><a class="footer-list-item">About Us</a></li>
+                <li><a href="#" class="footer-list-item">Contact Us</a></li>
+                <li><a href="#" class="footer-list-item">Advertise</a></li>
+                <li><a href="#" class="footer-list-item">Jobs</a></li>
+            </ul>
+        </div>
+        <!--Social media section-->
+        <div class="sns-footer">
+            <h2>Follow us on Social Media</h2>
+            <span class="social-media-section">
+                <!-- Icons made by https://www.flaticon.com/authors/freepik -->
+                <img class="facebook" src="images/001-facebook.svg" alt="Facebook Icon">
+                <img class="instagram" src="images/002-instagram.svg" alt="Instagram Icon">
+                <img class="twitter" src="images/003-twitter.svg" alt="Twitter Icon">
+                <img class="linkedin" src="images/004-linkedin.svg" alt="Facebook Icon">
+            </span>
+        </div>
+        <!-- final small footer -->
+        <div class="footer-small">
+            <address>Registered address: street, city, telephone no.</address>
+            <div class="terms-and-conditions">
+                © 2020 Chicago Art Magazine
+                22 Old Queen Street, Chicago, SW1H 9HP
+            </div>
+        </div>
+    </footer>
+    <!--External Javascript file-->
+    <script src="/script/myScript.js"></script>
+</body>
+
+</html>
